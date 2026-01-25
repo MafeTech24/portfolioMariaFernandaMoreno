@@ -189,7 +189,7 @@ export const projects: Project[] = [
   contribution: "• Diseño de la arquitectura de componentes. \n• Implementación de routing y navegación. \n• Manejo de estado global para el carrito de compras. \n• Desarrollo de componentes reutilizables. \n• Optimización de rendimiento y experiencia de usuario.",
   liveUrl: "https://pixelymoda.vercel.app/",
   repoUrl: "https://github.com/MafeTech24/ProyectoFinalMoreno",
-  image: "logoPixel.jpg",
+  image: "pyM.jpg",
   },
 {
     id: "n8n-automation",
@@ -277,5 +277,6 @@ export const navLinks = [
   { href: "#about", label: "Sobre mí" },
   { href: "#education", label: "Estudios" },
   { href: "#projects", label: "Proyectos" },
+  { href: "#skills", label: "Habilidades" },
   { href: "#contact", label: "Contacto" },
 ];

@@ -16,21 +16,7 @@ const AboutSection = () => {
             <p className="text-muted-foreground leading-relaxed">
               {aboutText}
             </p>
-          </div>
-
-          {/* Soft Skills */}
-          <div className="text-center">
-            <h3 className="text-lg font-semibold text-foreground mb-6">
-              Habilidades blandas
-            </h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {softSkills.map((skill) => (
-                <span key={skill} className="badge-primary">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
+          </div>        
         </div>
       </div>
     </section>
