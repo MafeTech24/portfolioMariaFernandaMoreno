@@ -1,27 +1,47 @@
-import { ExternalLink, Github, Clock } from "lucide-react";
+import { useMemo, useState } from "react";
+import { ExternalLink, Github, Clock, ChevronDown, ChevronUp } from "lucide-react";
 import type { Project } from "@/data/portfolio";
-import n8nWorkflow from "@/assets/n8n-workflow.png";
 
 interface ProjectCardProps {
   project: Project;
 }
 
+/* Carga automática de imágenes */
+const assetImages = import.meta.glob("/src/assets/*.{png,jpg,jpeg,webp,svg}", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+
+function resolveProjectImage(fileName?: string) {
+  if (!fileName) return undefined;
+  return assetImages[`/src/assets/${fileName}`];
+}
+
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const isPlaceholder = project.isPlaceholder;
+  const [expanded, setExpanded] = useState(false);
+
+  const hasLongText = useMemo(() => {
+    if (isPlaceholder) return false;
+    const t = `${project.problem} ${project.solution} ${project.contribution}`.trim();
+    return t.length > 240; // umbral simple para mostrar botón
+  }, [isPlaceholder, project.problem, project.solution, project.contribution]);
+
+  const clampProblem = expanded ? "" : "line-clamp-2";
+  const clampSolution = expanded ? "" : "line-clamp-3";
+  const clampContribution = expanded ? "" : "line-clamp-2";
+
+  const imgSrc = !isPlaceholder ? resolveProjectImage(project.image) : undefined;
 
   return (
-    <article
-      className={`card-tech flex flex-col h-full ${
-        isPlaceholder ? "opacity-60" : ""
-      }`}
-    >
-      {/* Image for n8n project */}
-      {project.image === "n8n-workflow" && (
+    <article className={`card-tech flex flex-col h-full ${isPlaceholder ? "opacity-60" : ""}`}>
+      {/* Image (si existe) */}
+      {!isPlaceholder && imgSrc && (
         <div className="mb-4 rounded-lg overflow-hidden border border-border">
           <img
-            src={n8nWorkflow}
-            alt="Workflow n8n - Automatización de reuniones"
-            className="w-full h-40 object-cover"
+            src={imgSrc}
+            alt={`Preview ${project.title}`}
+            className="w-full h-44 object-cover"
             loading="lazy"
           />
         </div>
@@ -39,26 +59,48 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             <span className="text-xs font-medium text-primary uppercase tracking-wide">
               Problema
             </span>
-            <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+            <p className={`text-sm text-muted-foreground mt-1 whitespace-pre-line ${clampProblem}`}>
               {project.problem}
             </p>
           </div>
+
           <div>
             <span className="text-xs font-medium text-primary uppercase tracking-wide">
               Solución
             </span>
-            <p className="text-sm text-muted-foreground mt-1 line-clamp-3">
+            <p className={`text-sm text-muted-foreground mt-1 whitespace-pre-line ${clampSolution}`}>
               {project.solution}
             </p>
           </div>
+
           <div>
             <span className="text-xs font-medium text-primary uppercase tracking-wide">
               Mi aporte
             </span>
-            <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+            <p className={`text-sm text-muted-foreground mt-1 whitespace-pre-line ${clampContribution}`}>
               {project.contribution}
             </p>
           </div>
+
+          {/* Ver más / menos */}
+          {hasLongText && (
+            <button
+              type="button"
+              onClick={() => setExpanded((v) => !v)}
+              className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+              aria-expanded={expanded}
+            >
+              {expanded ? (
+                <>
+                  Ver menos <ChevronUp className="w-4 h-4" />
+                </>
+              ) : (
+                <>
+                  Ver más <ChevronDown className="w-4 h-4" />
+                </>
+              )}
+            </button>
+          )}
         </div>
       ) : (
         <div className="flex items-center gap-2 text-muted-foreground mb-4 flex-grow">

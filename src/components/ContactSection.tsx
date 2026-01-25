@@ -122,8 +122,9 @@ const ContactSection = () => {
                 className="absolute opacity-0 pointer-events-none"
                 tabIndex={-1}
                 autoComplete="off"
+                title="Anti-spam field"
+                aria-hidden="true"
               />
-
               {/* Name */}
               <div>
                 <label

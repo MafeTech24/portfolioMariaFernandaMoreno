@@ -34,15 +34,17 @@ export interface Experience {
 
 export const personalInfo = {
   name: "María Fernanda Moreno",
-  role: "Desarrolladora Frontend | Automation (n8n) | IA aplicada",
-  subtitle: "Desarrollo Sitios Web. Automatizo procesos con n8n integrando Google Workspace e IA para reducir tareas manuales y mejorar el seguimiento.",
+  role: "Desarrolladora Frontend | Automatización con n8n/make | IA aplicada",
+  subtitle: "Construyo interfaces web modernas y escalables con React/TypeScript. Automatizo procesos con n8n integrando Google Workspace e IA para reducir tareas manuales y mejorar el seguimiento.",
   linkedin: "https://www.linkedin.com/in/mafetechdev",
   github: "https://github.com/MafeTech24",
   initials: "MF",
 };
 
-export const aboutText = `Soy Desarrolladora Front-End Jr en formación Full-Stack (MERN) con foco en automatización (n8n) e IA aplicada. Me definen la comunicación efectiva, el trabajo en equipo, la empatía y motivación, la eficiencia y organización y una fuerte orientación a la resolución de problemas. Disfruto transformar necesidades en soluciones claras, con seguimiento y documentación. Trabajo tanto en proyectos freelance como en colaboración con equipos, buscando siempre mejorar procesos y aportar valor medible.`;
-
+export const aboutText = `Soy Desarrolladora Frontend Jr con foco en React/TypeScript, en formación Full-Stack (MERN), y con interés práctico en automatización de procesos con n8n e IA aplicada.
+Trabajo en proyectos reales y académicos llevando ideas a producción con buenas prácticas: componentización, integración con APIs, manejo de estado, debugging y validación de flujos críticos.
+También diseño UX/UI priorizando claridad, jerarquía visual y experiencia de usuario. Utilizo herramientas de IA como apoyo para generar imágenes, videos y propuestas visuales iniciales, que luego adapto, personalizo y optimizo según los objetivos del proyecto y las necesidades reales del cliente.
+Me caracterizan la comunicación clara, la organización y una fuerte orientación a resolver problemas con impacto medible. Busco sumarme a equipos donde pueda aportar con entregas incrementales, aprender en entorno real y seguir creciendo en arquitectura y calidad de frontend.`;
 export const softSkills = [
   "Comunicación efectiva",
   "Trabajo en equipo",
@@ -71,6 +73,10 @@ export const techSkills: Skill[] = [
   { name: "Google Workspace", category: "tools" },
   { name: "Trello", category: "tools" },
   { name: "Canva Pro", category: "tools" },
+  { name: "UX/UI básico", category: "soft" },
+  { name: "Diseño asistido por IA", category: "ia" },
+  { name: "Generación de imágenes y video con IA", category: "ia" },
+
 ];
 
 export const education: Education[] = [
@@ -164,6 +170,38 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+  id: "furnariusEventos",
+  title: "Furnarius Eventos — Sitio web institucional (Cliente real)",
+  problem: "Empresa del rubro eventos sin presencia digital profesional, lo que limitaba su visibilidad, comunicación de servicios y captación de nuevos clientes.",
+  solution: "Diseño y personalización de la experiencia visual del sitio, utilizando IA para generar recursos gráficos iniciales (imágenes y videos), posteriormente adaptados y ajustados manualmente para reflejar la identidad del cliente y mejorar la experiencia de usuario.",
+  stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "GitHub", "Lovable (IA)"],
+  contribution: "• Relevamiento y definición de objetivos junto al cliente.\n• Estructura de secciones y arquitectura de UI.\n• Personalización de diseño, contenido y experiencia de usuario.\n• Mejoras de performance y responsive.\n• Deploy y puesta en producción en Vercel.\n• Iteraciones según feedback real.",
+  liveUrl: "https://furnarius-eventos.vercel.app/",
+  repoUrl: "https://github.com/MafeTech24/furnariusEventos",
+  image: "furnarius.jpg",
+  },
+  {
+  id: "pixelymoda",
+  title: "Pixel&Moda — E-commerce (Proyecto Final React))",
+  problem: "Proyecto académico que requería migrar un e-commerce a React, aplicando buenas prácticas de desarrollo frontend y una arquitectura escalable.",
+  solution: "Desarrollo de una aplicación e-commerce en React con enfoque en componentización, reutilización de componentes y manejo de estado, priorizando mantenibilidad y experiencia de usuario. Incluye navegación, catálogo de productos, flujos de interacción y estructura preparada para escalar.",
+  stack: ["React", "Vite", "JavaScript", "Bootstrap", "GitHub"],
+  contribution: "• Diseño de la arquitectura de componentes. \n• Implementación de routing y navegación. \n• Manejo de estado global para el carrito de compras. \n• Desarrollo de componentes reutilizables. \n• Optimización de rendimiento y experiencia de usuario.",
+  liveUrl: "https://pixelymoda.vercel.app/",
+  repoUrl: "https://github.com/MafeTech24/ProyectoFinalMoreno",
+  image: "logoPixel.jpg",
+  },
+{
+    id: "n8n-automation",
+    title: "Automatización de reuniones con n8n + Google Workspace + IA",
+    problem: "Procesar grabaciones de reuniones manualmente era tedioso y propenso a errores.",
+    solution: "Workflow automatizado: trigger en Drive → descarga → transcripción → extracción de puntos clave y tareas con IA → creación/actualización de documento → actualización de hoja tipo Kanban en Sheets.",
+    stack: ["n8n", "Google Drive", "Google Docs", "Google Sheets", "IA/LLM"],
+    contribution: "Diseño del flujo completo, configuración de nodos y testing.",
+    repoUrl: "https://github.com/MafeTech24/n8n-actas-kanban-google-workspace",
+    image: "n8n-workflow.jpg",
+  },
+  {
   id: "portfolio-vibe-coding-lovable",
   title: "Portfolio Profesional – MafeTech (Vibe Coding con Lovable)",
   problem: "Necesitaba un Portfolio Tech Moderno para presentar mi perfil y proyectos.",
@@ -172,62 +210,49 @@ export const projects: Project[] = [
   contribution: "Definí estructura y contenido, guié el vibe coding con prompts y ajusté código y README.",
   liveUrl: "https://mafetech.vercel.app/",
   repoUrl: "https://github.com/ProyectosVibeCoding/portfolioMariaFernandaMoreno",
-},
+  image: "portfolio.jpg",
+  },  
   {
     id: "cristianmartinez",
     title: "Sitio Web Profesional – Abogado Cristian Martínez",
     problem: "El cliente necesitaba presencia web profesional para captar clientes.",
     solution: "Sitio web moderno con todos los medios de Contacto y diseño profesional.",
-    stack: ["HTML", "CSS", "JavaScript", "Vercel"],
+    stack: ["HTML", "CSS", "JavaScript","bootstrap","Sass","Github", "Vercel"],
     contribution: "Desarrollo completo, relevamiento de necesidades y publicación.",
     liveUrl: "https://cristianmartinez-abogado.vercel.app/",
-  },
-  {
-    id: "silviamariella",
-    title: "Sitio Web – Silvia Mariella & José Tomás",
-    problem: "Necesidad sitio web para eventos y proyecto personal.",
-    solution: "Landing page elegante con diseño personalizado.",
-    stack: ["HTML", "CSS", "JavaScript", "Vercel"],
-    contribution: "Diseño, desarrollo y deploy en Vercel.",
-    liveUrl: "https://silviamariella-josetomas.vercel.app/",
+    image: "cristianMartinez.png",
   },
   {
     id: "abyco",
     title: "Sitio Web Institucional – AB&CO Asesoría Integral",
     problem: "La empresa requería presencia digital profesional.",
     solution: "Sitio institucional con información de servicios y contacto.",
-    stack: ["HTML", "CSS", "JavaScript"],
+    stack: ["HTML", "CSS", "JavaScript","bootstrap", "Github", "Vercel"],
     contribution: "Desarrollo frontend completo y optimización.",
     liveUrl: "https://abyco-asesoriaintegral.vercel.app/index.html#",
+    image: "abyco.jpg",
   },
   {
-    id: "n8n-automation",
-    title: "Automatización de reuniones con n8n + Google Workspace + IA",
-    problem: "Procesar grabaciones de reuniones manualmente era tedioso y propenso a errores.",
-    solution: "Workflow automatizado: trigger en Drive → descarga → transcripción → extracción de puntos clave y tareas con IA → creación/actualización de documento → actualización de hoja tipo Kanban en Sheets.",
-    stack: ["n8n", "Google Drive", "Google Docs", "Google Sheets", "IA/LLM"],
-    contribution: "Diseño del flujo completo, configuración de nodos y testing.",
-    repoUrl: "https://github.com/MafeTech24/n8n-actas-kanban-google-workspace",
-    image: "n8n-workflow",
-  },
+    id: "silviamariella",
+    title: "Sitio Web – Silvia Mariella & José Tomás",
+    problem: "Necesidad sitio web para eventos y proyecto personal.",
+    solution: "Landing page elegante con diseño personalizado.",
+    stack: ["HTML", "CSS", "JavaScript","bootstrap", "Github", "Vercel"],
+    contribution: "Diseño, desarrollo y deploy en Vercel.",
+    liveUrl: "https://silviamariella-josetomas.vercel.app/",
+    image: "silviayJose.jpg",
+  },      
   {
-    id: "ecommerce-js",
-    title: "E-commerce (Proyecto Final JavaScript)",
+    id: "dulceybella",
+    title: "Dulce y Bella - Distribuidora de Perfumes (Proyecto Final JS)",
     problem: "Proyecto académico: crear un e-commerce funcional con JS puro.",
     solution: "Catálogo de productos, carrito de compras y flujo de compra completo.",
-    stack: ["JavaScript", "HTML", "CSS", "GitHub Pages"],
+    stack: ["JavaScript", "HTML", "bootstrap", "Github", "Vercel"],
     contribution: "Desarrollo completo del frontend y lógica del carrito.",
-    liveUrl: "https://mafetech24.github.io/proyectoFinalMorenoMariaFernanda/",
-  },
-  {
-    id: "ecommerce-react",
-    title: "E-commerce (Proyecto Final React)",
-    problem: "Proyecto académico: migrar e-commerce a React con mejores prácticas.",
-    solution: "Aplicación React con componentes reutilizables y estado centralizado.",
-    stack: ["React", "Vite", "JavaScript", "CSS"],
-    contribution: "Arquitectura de componentes, routing y manejo de estado.",
-    repoUrl: "https://github.com/MafeTech24/ProyectoFinalMoreno.git",
-  },
+    liveUrl: "https://dulceybellaperfumes.vercel.app/",
+    repoUrl: "https://github.com/MafeTech24/proyectoFinalMorenoMariaFernanda",
+    image: "dulceybella.jpg",
+  },  
   //{
     //id: "api-rest-1",
     //title: "API REST (Node/Express)",
