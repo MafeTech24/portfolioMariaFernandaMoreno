@@ -10,7 +10,7 @@ const ProjectsSection = () => {
           <h2 className="text-foreground mb-4">Proyectos</h2>
           <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-4" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Selección de proyectos freelance, académicos y de automatización.
+            Selección de Prototipos de Proyectos freelance, académicos y de automatización.
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-import { aboutText, softSkills } from "@/data/portfolio";
+import { aboutText } from "@/data/portfolio";
 
 const AboutSection = () => {
   return (
@@ -13,8 +13,13 @@ const AboutSection = () => {
 
           {/* About Text */}
           <div className="card-tech mb-8">
-            <p className="text-muted-foreground leading-relaxed">
-              {aboutText}
+            <p className="text-muted-foreground leading-relaxed about-text">
+              {aboutText.split('\n').map((line, index) => (
+                <span key={index}>
+                  {line}
+                  <br />
+                </span>
+              ))}
             </p>
           </div>        
         </div>
