@@ -39,7 +39,7 @@ const Header = () => {
 
           {/* Social Links - Desktop */}
           <div className="hidden md:flex items-center gap-3">
-            <a
+            {/*<a
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
@@ -47,7 +47,7 @@ const Header = () => {
               aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
-            </a>
+            </a>*/}
             <a
               href={personalInfo.linkedin}
               target="_blank"
@@ -85,7 +85,7 @@ const Header = () => {
                 </li>
               ))}
               <li className="flex items-center gap-4 px-6 py-3 border-t border-border mt-2">
-                <a
+                {/*<a
                   href={personalInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -93,7 +93,7 @@ const Header = () => {
                 >
                   <Github className="w-5 h-5" />
                   <span>GitHub</span>
-                </a>
+                </a>*/}
                 <a
                   href={personalInfo.linkedin}
                   target="_blank"

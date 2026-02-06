@@ -47,7 +47,7 @@ const HeroSection = () => {
 
           {/* Social Links */}
           <div className="flex items-center justify-center gap-4">
-            <a
+            {/*<a
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
@@ -55,7 +55,7 @@ const HeroSection = () => {
             >
               <Github className="w-5 h-5" />
               <span className="text-sm font-medium">GitHub</span>
-            </a>
+            </a>*/}
             <a
               href={personalInfo.linkedin}
               target="_blank"

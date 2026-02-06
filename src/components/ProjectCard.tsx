@@ -114,11 +114,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 <ExternalLink className="w-4 h-4" /> Live
               </a>
             )}
+            {/*}
             {project.repoUrl && (
               <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
                 <Github className="w-4 h-4" /> Repo
               </a>
-            )}
+            )}*/}
           </div>
         )}
       </article>
