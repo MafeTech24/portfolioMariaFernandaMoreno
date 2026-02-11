@@ -190,16 +190,36 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [ 
   {
-  id: "document-processing-pipeline",
-  title: "Sistema Inteligente de Procesamiento de Documentos",
-  problem: "Procesamiento manual de facturas y documentos administrativos consume tiempo y genera errores. Falta automatización para extraer datos, validar y organizar documentos en volúmenes altos.",
-  solution: "Pipeline event-driven que recibe documentos desde múltiples canales (webhook), extrae datos automáticamente mediante OCR simulado + IA, valida mediante confianza, elimina duplicados con deduplicación por hash, y registra todo en base de datos con auditoría completa.",
-  stack: ["n8n", "Supabase", "Google Sheets", "Google Cloud", "JavaScript/Code", "Webhooks", "Hash-based Deduplication"],
-  contribution: "• Arquitectura multi-capa: ingesta → normalización → deduplicación → procesamiento → persistencia → logging.\n• Implementación de deduplicación inteligente usando MD5 hash para evitar duplicados.\n• Nodos Code para normalización de inputs desde diferentes orígenes.\n• Integración Supabase para persistencia con auditoría automática.\n• Dashboard en tiempo real en Google Sheets con logging de cada operación.\n• Simulación de OCR con extracción de datos estructurados en JSON.\n• Manejo de condicionales para routing inteligente de documentos.",
-  image: "procesoTramitacionDoc.jpg",
-  //github: "https://github.com/tu-usuario/document-processing-pipeline",
-  //loom: "https://loom.com/share/tu-video-id (agregar mañana después de grabar)"
-  },
+  id: "document-processing-ai-pipeline",
+  title: "Automatización de Procesamiento de Documentos con IA",
+  problem: "El procesamiento manual de facturas y documentos administrativos consume horas de trabajo, genera errores humanos en la extracción de datos, y carece de trazabilidad. Las empresas necesitan procesar grandes volúmenes de documentos (facturas, recibos, contratos) de forma rápida, precisa y auditable.",
+  solution: "Pipeline inteligente end-to-end que automatiza el ciclo completo: recepción vía webhook → normalización de entrada → deduplicación por hash → extracción de datos con Gemini AI → validación con scoring de confianza → persistencia en Supabase → logging dual en Google Sheets (auditoría + contenido para LinkedIn). Sistema event-driven con arquitectura modular y trazabilidad completa.",
+  stack: [
+    "n8n",
+    "Gemini AI 2.5 Flash",
+    "Supabase",
+    "Google Sheets API",
+    "JavaScript/Node.js",
+    "Webhooks",
+    "REST APIs",
+    "Hash-based Deduplication",
+    "OCR/Document AI"
+  ],
+  contribution: 
+    "• Diseño e implementación de arquitectura multi-capa: ingesta → normalización → deduplicación → extracción IA → scoring → persistencia → logging\n" +
+    "• Integración de Gemini AI para extracción inteligente de datos estructurados (número factura, fecha, proveedor, total, divisa) desde documentos no estructurados\n" +
+    "• Sistema de deduplicación basado en hash MD5 para prevenir procesamiento duplicado y optimizar recursos\n" +
+    "• Algoritmo de confidence scoring que evalúa completitud de datos y quality score de IA para determinar necesidad de revisión manual\n" +
+    "• Nodos Code personalizados para normalización de payloads heterogéneos desde múltiples fuentes (API, email, upload manual)\n" +
+    "• Persistencia dual: Supabase (base de datos principal) + Google Sheets (auditoría en tiempo real y dashboard ejecutivo)\n" +
+    "• Sistema de logging estructurado con tracking de: timestamp, datos extraídos, confianza, campos faltantes, status procesamiento\n" +
+    "• Generación automática de contenido para LinkedIn basado en métricas del procesamiento (tech showcase)\n" +
+    "• Manejo robusto de errores y validación de campos requeridos con identificación de missing fields\n" +
+    "• Arquitectura escalable preparada para agregar más tipos de documentos y fuentes de ingesta",
+  image: "7.flujoExitoso.jpg",
+  repoUrl: "https://github.com/MafeTech24/n8n-procesamientoDocsEnd2End",
+  // loom: "https://loom.com/share/tu-video-id", // Agregar después de grabar demo
+},
   {
   id: "chatbot-furnarius",
   title: "Asistente Inteligente de CX — Furnarius Eventos",
