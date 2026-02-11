@@ -190,6 +190,17 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [ 
   {
+  id: "document-processing-pipeline",
+  title: "Sistema Inteligente de Procesamiento de Documentos",
+  problem: "Procesamiento manual de facturas y documentos administrativos consume tiempo y genera errores. Falta automatización para extraer datos, validar y organizar documentos en volúmenes altos.",
+  solution: "Pipeline event-driven que recibe documentos desde múltiples canales (webhook), extrae datos automáticamente mediante OCR simulado + IA, valida mediante confianza, elimina duplicados con deduplicación por hash, y registra todo en base de datos con auditoría completa.",
+  stack: ["n8n", "Supabase", "Google Sheets", "Google Cloud", "JavaScript/Code", "Webhooks", "Hash-based Deduplication"],
+  contribution: "• Arquitectura multi-capa: ingesta → normalización → deduplicación → procesamiento → persistencia → logging.\n• Implementación de deduplicación inteligente usando MD5 hash para evitar duplicados.\n• Nodos Code para normalización de inputs desde diferentes orígenes.\n• Integración Supabase para persistencia con auditoría automática.\n• Dashboard en tiempo real en Google Sheets con logging de cada operación.\n• Simulación de OCR con extracción de datos estructurados en JSON.\n• Manejo de condicionales para routing inteligente de documentos.",
+  image: "procesoTramitacionDoc.jpg",
+  //github: "https://github.com/tu-usuario/document-processing-pipeline",
+  //loom: "https://loom.com/share/tu-video-id (agregar mañana después de grabar)"
+  },
+  {
   id: "chatbot-furnarius",
   title: "Asistente Inteligente de CX — Furnarius Eventos",
   problem: "Falta de respuesta inmediata a consultas complejas de ambientación y mobiliario, afectando la conversión de clientes potenciales.",
