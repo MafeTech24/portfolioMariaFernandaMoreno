@@ -35,8 +35,10 @@ export interface Experience {
 
 export const personalInfo = {
   name: "María Fernanda Moreno",
-  role: "Frontend Developer (React) & Automation Developer | n8n | AI",
+  role: "React Developer & AI Automation | n8n | Web Builder",
   subtitle: "Construyo interfaces modernas con React y sistemas de automatización con IA que transforman procesos manuales en soluciones automáticas, escalables y listas para producción.",
+  linkedin: "https://www.linkedin.com/in/mafetechdev",
+  github: "https://github.com/MafeTech24",
   initials: "MF",
 };
 

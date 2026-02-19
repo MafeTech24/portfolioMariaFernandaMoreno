@@ -59,6 +59,12 @@ const ContactSection = () => {
 
     setStatus("loading");
 
+    if (!supabase) {
+      setStatus("error");
+      setErrorMessage("El sistema de contacto no está configurado correctamente (faltan variables de entorno).");
+      return;
+    }
+
     try {
       const { data, error } = await supabase.functions.invoke("send-contact", {
         body: {
