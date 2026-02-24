@@ -197,7 +197,48 @@ export const experiences: Experience[] = [
   },
 ];
 
-export const projects: Project[] = [ 
+export const projects: Project[] = [
+{
+  id: "leadflow-ai-n8n",
+
+  title: "LeadFlow AI — Pipeline de Clasificación Inteligente de Leads con n8n y Gemini AI",
+
+  problem:
+    "La clasificación manual de leads comerciales consume tiempo del equipo de ventas y genera demoras en el seguimiento de oportunidades urgentes. Sin automatización, los leads calientes pueden perderse entre decenas de consultas sin priorización.",
+
+  solution:
+    "Desarrollo de un pipeline de automatización utilizando n8n con arquitectura modular de sub-workflows que captura leads vía webhook, valida y normaliza el input, clasifica automáticamente cada consulta con Gemini AI asignando un score del 1 al 10 y categoría hot/warm/cold, persiste los resultados en Google Sheets para trazabilidad completa y envía alertas instantáneas por email cuando detecta un lead caliente.",
+
+  stack: [
+    "n8n",
+    "JavaScript",
+    "Gemini AI",
+    "Google Sheets API",
+    "Gmail API",
+    "Webhooks",
+    "REST APIs",
+    "Workflow Automation",
+    "Lead Classification",
+    "AI Integration",
+    "Modular Architecture",
+    "Production Automation"
+  ],
+
+  contribution:
+    "• Diseño de arquitectura modular con 3 sub-workflows reutilizables e independientes\n" +
+    "• Implementación de validación y normalización de input con detección de campos faltantes\n" +
+    "• Integración con Gemini 2.0 Flash para clasificación estructurada de leads con schema forzado\n" +
+    "• Desarrollo de lógica de parsing y limpieza de respuestas IA en JavaScript\n" +
+    "• Persistencia automática en Google Sheets con trazabilidad completa por execution_id\n" +
+    "• Sistema de alertas por Gmail para leads con categoría HOT\n" +
+    "• Pipeline probado end-to-end con datos reales en n8n Cloud\n" +
+    "• Documentación profesional con README, .env.example y setup en 5 minutos\n" +
+    "• Publicación en GitHub con workflows limpios sin credenciales expuestas",
+
+  image: "leadFlowAI.jpg",
+
+  repoUrl: "https://github.com/MafeTech24/LeadFlow-AI",
+}, 
 {
   id: "ai-email-document-intelligence-n8n",
 
